@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas con Progreso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <header class="encabezado">
+            <h1>Lista de Tareas con Progreso</h1>
+            
+            <section class="contador" aria-label="Resumen de tareas">
+                <p>Total de tareas: <span id="total-tareas">0</span></p>
+                <p>Completadas: <span id="tareas-completadas">0</span></p>
+                <p>Pendientes: <span id="tareas-pendientes">0</span></p>
+            </section>
+        </header>
+
+        <section class="formulario-seccion">
+            <form id="formulario-tarea" class="formulario">
+                <input 
+                    type="text" 
+                    id="input-tarea" 
+                    placeholder="Escribe una tarea..." 
+                    aria-label="Escribe una tarea"
+                >
+                <button type="submit" id="btn-agregar">Agregar tarea</button>
+            </form>
+            <p id="mensaje-error" class="error oculto">Por favor, escribe una tarea válida.</p>
+        </section>
+
+        <section class="lista-seccion">
+            <ul id="lista-tareas" class="lista-tareas">
+            </ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
