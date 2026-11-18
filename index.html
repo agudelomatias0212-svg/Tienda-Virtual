@@ -3,40 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tareas con Progreso</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Tienda virtual con carrito</title>
 </head>
 <body>
+
+    <header class="encabezado">
+        <h1>Tienda Virtual</h1>
+    </header>
+
     <main class="contenedor">
-        <header class="encabezado">
-            <h1>Lista de Tareas con Progreso</h1>
-            
-            <section class="contador" aria-label="Resumen de tareas">
-                <p>Total de tareas: <span id="total-tareas">0</span></p>
-                <p>Completadas: <span id="tareas-completadas">0</span></p>
-                <p>Pendientes: <span id="tareas-pendientes">0</span></p>
-            </section>
-        </header>
 
-        <section class="formulario-seccion">
-            <form id="formulario-tarea" class="formulario">
-                <input 
-                    type="text" 
-                    id="input-tarea" 
-                    placeholder="Escribe una tarea..." 
-                    aria-label="Escribe una tarea"
-                >
-                <button type="submit" id="btn-agregar">Agregar tarea</button>
-            </form>
-            <p id="mensaje-error" class="error oculto">Por favor, escribe una tarea válida.</p>
+        <section class="catalogo">
+            <h2>Catálogo</h2>
+
+            <div class="barra-filtros">
+                <div id="filtros" class="filtros"></div>
+                <p id="contador" class="contador">Mostrando 0 productos</p>
+            </div>
+
+            <div id="productos" class="productos"></div>
         </section>
 
-        <section class="lista-seccion">
-            <ul id="lista-tareas" class="lista-tareas">
-            </ul>
-        </section>
+        <aside class="carrito">
+            <h2>Carrito de compras</h2>
+
+            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío</p>
+
+            <ul id="lista-carrito" class="lista-carrito"></ul>
+
+            <div class="resumen">
+                <p>Artículos: <span id="articulos">0</span></p>
+                <p>Subtotal: <span id="subtotal">$ 0</span></p>
+                <p>Descuento: <span id="descuento">-$ 0</span></p>
+                <p class="total">Total: <span id="total">$ 0</span></p>
+            </div>
+
+            <button id="btn-vaciar" class="btn-vaciar">Vaciar carrito</button>
+        </aside>
+
     </main>
 
-    <script src="app.js"></script>
 </body>
-</html>
+</html>  
