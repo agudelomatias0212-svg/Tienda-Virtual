@@ -1,0 +1,270 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f5f7;
+    color: #252525;
+    line-height: 1.5;
+}
+
+
+.encabezado {
+    background-color: #20252d;
+    color: white;
+    padding: 25px 40px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.encabezado h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.contenedor {
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 30px;
+    align-items: start;
+}
+
+
+.catalogo h2,
+.carrito h2 {
+    font-size: 23px;
+    margin-bottom: 22px;
+    color: #252525;
+}
+
+.barra-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtros button {
+    background-color: white;
+    border: 1px solid #dcdfe4;
+    color: #444;
+    padding: 9px 17px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtros button:hover {
+    background-color: #20252d;
+    color: white;
+}
+
+.filtros button.activo {
+    background-color: #20252d;
+    color: white;
+    border-color: #20252d;
+}
+
+.contador {
+    color: #777;
+    font-size: 14px;
+}
+
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.productos > * {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.productos > *:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.08);
+}
+
+.productos h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.productos p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.productos button {
+    width: 100%;
+    padding: 11px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 7px;
+    background-color: #303944;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.productos button:hover {
+    background-color: #151a20;
+}
+
+.productos button:disabled {
+    background-color: #bfc3c9;
+    color: #666;
+    cursor: not-allowed;
+}
+
+
+.carrito {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.carrito h2 {
+    font-size: 21px;
+}
+
+.carrito-vacio {
+    color: #888;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+}
+
+.lista-carrito {
+    list-style: none;
+}
+
+.lista-carrito li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.lista-carrito button {
+    padding: 5px 10px;
+    margin: 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.lista-carrito button:hover {
+    background-color: #e2e5e9;
+}
+
+
+
+.resumen {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.resumen p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 14px;
+}
+
+.resumen .total {
+    color: #20252d;
+    font-size: 19px;
+    font-weight: bold;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+
+.btn-vaciar {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid #d9534f;
+    border-radius: 7px;
+    color: #d9534f;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-vaciar:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+
+@media (max-width: 1000px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 22px 15px;
+    }
+
+    .encabezado h1 {
+        font-size: 23px;
+    }
+
+    .contenedor {
+        width: 92%;
+        margin: 25px auto;
+        gap: 25px;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .barra-filtros {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .carrito {
+        padding: 20px;
+    }
+}
